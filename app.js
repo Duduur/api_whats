@@ -1,3 +1,10 @@
+/*********************************************************************************************************************************************************************************
+ *Objetivo: API para retornar dados de Whatsapp 
+ *Data: 04/02/2025
+ *Autor: Letícia -> Prof° Marcel 
+ *Versão: 1.0
+***********************************************************************************************************************************************************************************/
+
 const express    = require('express')
 const cors       = require('cors')
 const bodyParser = require('body-parser')
@@ -26,7 +33,7 @@ app.get('/v1/whatsapp/pessoais/filtro', cors(), async function(request, response
     //Recebe a variável sigla via Query String
     let telefone = request.query.number
 
-    let dados = whatsapp.getListaContatos(telefone)
+    let dados = whatsapp.getDadosPessoaisUsuario(telefone)
 
     if(dados){
         response.status(200)
@@ -44,7 +51,7 @@ app.get('/v1/whatsapp/profile/filtro', cors(), async function(request, response)
     //Recebe a variável sigla via Query String
     let telefone = request.query.number
 
-    let dados = whatsapp.getFlitroUsuario(telefone)
+    let dados = whatsapp.getDadosProfileUsuario(telefone)
 
     if(dados){
         response.status(200)
@@ -62,7 +69,7 @@ app.get('/v1/whatsapp/contatos/filtro', cors(), async function(request, response
     //Recebe a variável sigla via Query String
     let telefone = request.query.number
 
-    let dados = whatsapp.getDadosContatos(telefone)
+    let dados = whatsapp.getDadosContatoUsuario(telefone)
 
     if(dados){
         response.status(200)
@@ -80,7 +87,7 @@ app.get('/v1/whatsapp/conversas/filtro', cors(), async function(request, respons
     //Recebe a variável sigla via Query String
     let telefone = request.query.number
 
-    let dados = whatsapp.getContatosUsuario(telefone)
+    let dados = whatsapp.getConversasUsuario(telefone)
 
     if(dados){
         response.status(200)
@@ -99,7 +106,7 @@ app.get('/v1/whatsapp/usuario-contato/filtro', cors(), async function(request, r
     let telefone = request.query.number
     let contato = request.query.nome
 
-    let dados = whatsapp.getFlitroUsuario(telefone, contato)
+    let dados = whatsapp.getFiltroContato(telefone, contato)
 
     if(dados){
         response.status(200)

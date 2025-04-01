@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;  
+    color: inherit;
+}
+
+body{
+    display: flex;
+}
+
+.container{
+    display:flex ;
+    height: 100vh;
+    margin-left: 20px;
+    width: 30vw;
+}
+
+.barraLateral{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.barraLateral h1{
+    font-size: 4rem;
+    font-family: "Paytone One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.barraLateral input{
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    height: 60px;
+}
+::placeholder{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
